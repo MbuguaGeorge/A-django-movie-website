@@ -1,0 +1,135 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+		
+		<title>IFLIX</title>
+
+		<!-- Loading third party fonts -->
+		<link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
+		<link href="{% static 'iflix/font/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+
+		<!-- Loading main css file -->
+		<link rel="stylesheet" href="{% static 'iflix/font/style.css' %}">
+		
+		<!--[if lt IE 9]>
+		<script src="{% static 'iflix/js-/ie-support/html5.js' %}"></script>
+		<script src="{% static 'iflix/js-/ie-support/respond.js' %}"></script>
+		<![endif]-->
+
+	</head>
+	<body>		
+		<div id="site-content">
+			<header class="site-header">
+				<div class="container">
+					<a id="branding">
+						<img src="{% static 'iflix/image/logo.png' %}" alt="" class="logo">
+						<div class="logo-copy">
+							<h1 class="site-title">IFLIX ENT.</h1>
+							<small class="site-description">We Bring You The Latest Movies | sign up to get access to the movies free</small>
+						</div>
+				
+
+					<div class="main-navigation">
+						<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+						<ul class="menu">
+							<li class="menu-item "><a href="register">Sign-up</a></li>
+						</ul> <!-- .menu -->
+
+						<form action="#" class="search-form">
+							<input type="text" placeholder="Search...">
+							<button><i class="fa fa-search"></i></button>
+						</form>
+					</div> <!-- .main-navigation -->
+					</div>
+					<div class="mobile-navigation"></div>
+				</div>
+			</header>
+			<main class="main-content">
+				<div class="container">
+					<div class="page">
+						<div class="row">
+							<div class="col-md-9">
+								
+							<div class="col-md-3">
+								<div class="row">
+									<div class="col-sm-6 col-md-12">
+										<div class="latest-movie">
+							
+											{% if m %}
+											{% for thumbnail in m %}
+											<img src="{{ thumbnail.thumbnail.url }}"/>
+											<h4><p>{{ thumbnail.movie_name }}</p></h4>
+											{% endfor %}
+											{% endif %}
+										</div>
+									</div>
+								
+								</div>
+							</div>
+					</div>
+				</div>
+			</main>
+			<footer class="site-footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-2">
+							<div class="widget">
+								<h3 class="widget-title">About Us</h3>
+								<p>Iflix Ent. is a free movie website that brings you all the latest movies right to you</p>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="widget">
+								
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="widget">
+								
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="widget">
+							<h3 class="widget-title">Help</h3>
+								<ul class="no-bullet">
+									<li><a href="contact" >Contact us</li></a>
+									<li>Blog</li>
+									<li>FAQ</li>
+									<li>Request</li>	
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="widget">
+								<h3 class="widget-title">Follow us</h3>
+								<ul class="no-bullet">
+									<li>Linkedin</li>
+									<li>Twitter</li>
+									<li>Facebook</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="widget">
+								<h3 class="widget-title">Movies</h3>
+								<ul class="no-bullet">
+									<li>Action</li>
+									<li>Romance</li>
+									<li>Comedy</li>
+									<li>Drama</li>
+									<li>Horror</li>
+								</ul>
+							</div>
+						</div>
+					</div> <!-- .row -->
+
+					<div class="colophon">Copyright 2020 Iflix Ent.All rights reserved</div>
+				</div> <!-- .container -->
+
+			</footer>
+</body>
+</html>

@@ -1,0 +1,185 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+		
+		<title>IFLIX | MOVIES</title>
+
+		<!-- Loading third party fonts -->
+		<link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
+		<link href="{% static 'iflix/font/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+
+		<!-- Loading main css file -->
+		<link rel="stylesheet" href="{% static 'iflix/font/style.css' %}">
+		
+		<!--[if lt IE 9]>
+		<script src="{% static 'iflix/js-/ie-support/html5.js' %}"></script>
+		<script src="{% static 'iflix/js-/ie-support/respond.js' %}"></script>
+		<![endif]-->
+
+	</head>
+
+
+	<body>
+		
+
+		<div id="site-content">
+			<header class="site-header">
+				<div class="container">
+					<a id="branding">
+							<img src="{% static 'iflix/image/logo.png' %}" alt="" class="logo">
+						
+							<div class="logo-copy">
+								<h2><p>{{ user.username }}</p></h2>
+							</div>
+
+									<form method="get" action="{% url 'search' %}" class="search-form">
+										<input type="text" placeholder="Search...">
+										<button><i class="fa fa-search"></i></button>
+									</form>
+								</div> <!-- .main-navigation -->
+
+						<div class="mobile-navigation"></div>
+					</a>
+				</div>
+			</header>
+		</div>
+			<main class="main-content">
+				<div class="container">
+					<div class="page">
+
+							<div class="filters">
+							<select name="#" id="#" placeholder="Choose Category">
+								<option value="#">Action</option>
+								<option value="#">Drama</option>
+								<option value="#">Fantasy</option>
+								<option value="#">Horror</option>
+								<option value="#">Adventure</option>
+							</select>
+							<select name="#" id="#">
+								<option value="#">2020</option>
+								<option value="#">2019</option>
+								<option value="#">2018</option>
+							</select>
+						</div>
+	
+
+						
+			
+					<div class="page">
+						<div>
+						<div class="row">
+							<div class="col-md-9">
+								
+							<div class="col-md-3">
+								<div class="row">
+									<div class="col-sm-6 col-md-12">
+										<div class="latest-movie">
+							
+											{% if results %}
+											{% for movie in results %}
+											<img src= "{{movie.thumbnail.url}}"/>
+
+											{% endfor %}
+											{% endif %}
+										</div>
+									</div>
+								
+								</div>
+						</div>
+							</div>
+					</div>
+						<div class="pagination">
+							<a href="#" class="page-number prev"><i class="fa fa-angle-left"></i></a>
+							<span class="page-number current">1</span>
+							<a href="#" class="page-number">2</a>
+							<a href="#" class="page-number">3</a>
+							<a href="#" class="page-number">4</a>
+							<a href="#" class="page-number">5</a>
+							<a href="#" class="page-number next"><i class="fa fa-angle-right"></i></a>
+						</div>
+					</div>
+				</div> <!-- .container -->
+			</main>
+			<footer class="site-footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-2">
+							<div class="widget">
+								<h3 class="widget-title">About Us</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia tempore vitae mollitia nesciunt saepe cupiditate</p>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="widget">
+								<h3 class="widget-title">Recent Review</h3>
+								<ul class="no-bullet">
+									<li>Lorem ipsum dolor</li>
+									<li>Sit amet consecture</li>
+									<li>Dolorem respequem</li>
+									<li>Invenore veritae</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="widget">
+								<h3 class="widget-title">Help Center</h3>
+								<ul class="no-bullet">
+									<li>Request</li>
+									<li>Blog</li>
+									<li>FAQ</li>
+									<li>Contact Us</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="widget">
+								<h3 class="widget-title">Join Us</h3>
+								<ul class="no-bullet">
+									<li>Lorem ipsum dolor</li>
+									<li>Sit amet consecture</li>
+									<li>Dolorem respequem</li>
+									<li>Invenore veritae</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="widget">
+								<h3 class="widget-title">Social Media</h3>
+								<ul class="no-bullet">
+									<li>Linkedin</li>
+									<li>Twitter</li>
+									<li>Gmail</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="widget">
+								<h3 class="widget-title">Newsletter</h3>
+								<form action="#" class="subscribe-form">
+									<input type="text" placeholder="Email Address">
+								</form>
+							</div>
+						</div>
+					</div> <!-- .row -->
+
+					<div class="colophon">Copyright 2020 Iflix Ent.All rights reserved</div>
+				</div> <!-- .container -->
+
+			</footer>
+		</div>
+		<!-- Default snippet for navigation -->
+		
+
+
+		<script src="{% static 'iflix/js-/jquery-1.11.1.min.js' %}"></script>
+		<script src="{% static 'iflix/js-/plugins.js' %}"></script>
+		<script src="{% static 'iflix/js-/app.js' %}"></script>
+		
+	</body>
+
+</html>
